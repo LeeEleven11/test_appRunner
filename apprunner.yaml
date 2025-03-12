@@ -5,4 +5,5 @@ build:
     build:
       - pip install -r requirements.txt
 run:
-  command: python server.py
+  # command: python server.py
+  command: streamlit run chat.py
