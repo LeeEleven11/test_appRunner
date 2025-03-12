@@ -1,14 +1,14 @@
-
 run:
   runtime-version: 3.11
-  pre-run:  
+  pre-run:
     - pip install -r requirements.txt
     - pip3 install pipenv
     - pipenv install
   command: streamlit run chatbot.py --server.port 8501 --server.address 0.0.0.0
-  network:
-      port: 8501
-      env: APP_RUNNER
-    env:
-      - name: AWS_REGION
-        value: us-east-1
+network:
+  port: 8501
+env:
+  - name: APP_RUNNER
+    value: "APP_RUNNER_test"  # 如果 APP_RUNNER 没有具体的值，可以留空
+  - name: AWS_REGION
+    value: us-east-1
