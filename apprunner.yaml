@@ -5,5 +5,4 @@ build:
     build:
       - pip install -r requirements.txt
 run:
-  # command: python server.py
-  command: streamlit run chatbot.py --server.port 8501
+  command: streamlit run chatbot.py
