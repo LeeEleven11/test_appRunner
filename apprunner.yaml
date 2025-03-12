@@ -1,15 +1,14 @@
-version: 1.0
-runtime: python3
-build:
-  commands:
-    build:
-      - pip install -r requirements.txt
+
 run:
-  runtime-version: 3.10  # 使用支持的Python版本
+  runtime-version: 3.11
+  pre-run:  
+    - pip install -r requirements.txt
+    - pip3 install pipenv
+    - pipenv install
   command: streamlit run chatbot.py --server.port 8501 --server.address 0.0.0.0
   network:
-    port: 8501
-    env: APP_RUNNER
-  env:
-    - name: AWS_REGION
-      value: us-east-1
+      port: 8501
+      env: APP_RUNNER
+    env:
+      - name: AWS_REGION
+        value: us-east-1
